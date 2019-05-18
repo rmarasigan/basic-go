@@ -1,0 +1,19 @@
+An interface is similar to a struct in that it combines one or more elements but rather than defining a type in terms of the data items it contains, an interface defines it in terms of a set of method signatures which it must implement.
+
+Once declared an interface can be used just like any other declared type, allowing functions and variables to operate with unkown types based solely on their required behaviour.
+
+
+type Reader interface {
+	Read(p []byte) (n int, err error)
+}
+
+type Writer interface {
+	Write(p []byte) (n int, err error)
+}
+
+type ReadWriter interface {
+	Reader
+	Writer
+}
+
+Here io is declaring three (3) interfaces, the Reader and Writer which are independent of each other and the ReadWriter which combines both. Anytime we declare a variable, field or function parameter in terms of a ReadWriter we know we can use both the Read() and Write() methods to manipulate it.
