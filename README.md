@@ -1,11 +1,11 @@
 # Basic GO Language
 
-Please do install go x.x.x on your machine and configured. If you're not familiar with GO Language, please go over to their [page](https://golang.org/doc/install)
+Please do install go x.x.x on your machine and configured. If you're not familiar with GO Language, please go over to their [page](https://golang.org/doc/install).
 
-For Windows, you also need to install, GIT, [GCC Compiler](http://tdm-gcc.tdragon.net/download) and set the environment variables.
+**For Windows**, you also need to install, GIT, [GCC Compiler](http://tdm-gcc.tdragon.net/download) and set the environment variables.
 
 
-For Linux:
+**For Linux:**
 
 ```
 $ nano .profile
@@ -22,7 +22,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 ```
 
-Proper sequence:
+# Proper sequence:
 * Hello World
 
 * Constants
@@ -33,14 +33,15 @@ Proper sequence:
 > A function is a block of code that takes some input(s), does some processing on the input(s) and produces some output(s).
 
 * Encapsulation
+> Go encapsulates things at the package level. Names that start with a lowercase letter are only visible within that package.
 
 * Startup
 
 * HTTP
 > A basic HTTP server has a few key jobs to take care of.
-  - Process dynamic requests: Process incoming requests from users who browse the website, log into their accounts or post images.
-  - Serve static assets: Serve JavaScript, CSS and images to browsers to create a dynamic experience for the user.
-  - Accept connections: The HTTP Server must listen on a specific port to be able to accept connections from the internet.
+>   - Process dynamic requests: Process incoming requests from users who browse the website, log into their accounts or post images.
+>   - Serve static assets: Serve JavaScript, CSS and images to browsers to create a dynamic experience for the user.
+>   - Accept connections: The HTTP Server must listen on a specific port to be able to accept connections from the internet.
 
 * Environment
 
@@ -54,6 +55,8 @@ Please go to [A Go Developer's Notebook](https://leanpub.com/GoNotebook/read#lea
 
 
 # Reference
-[Tour of Go](https://tour.golang.org/welcome/1)
-[Golang Functions](https://www.callicoder.com/golang-functions/)
-[Go Web Examples](https://gowebexamples.com/http-server/)
+* [Tour of Go](https://tour.golang.org/welcome/1)
+* [Golang Functions](https://www.callicoder.com/golang-functions/)
+* [Go Web Examples](https://gowebexamples.com/http-server/)
+* [Let's Go: Object-Oriented Programming in Golang](https://code.tutsplus.com/tutorials/lets-go-object-oriented-programming-in-golang--cms-26540)
+* [OOP and Go… Sorta](https://medium.com/behancetech/oop-and-go-sorta-c6682359a41b)
