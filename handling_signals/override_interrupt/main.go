@@ -7,10 +7,10 @@ import (
 	"os/signal"
 	. "sync"
 
-	/**
+	/*
 		syscall package defines a number of os.Signal
 		values which can be detected by Notify().
-	**/
+	*/
 	"syscall"
 )
 
@@ -41,7 +41,7 @@ func main() {
 	servers.Wait()
 }
 
-/**
+/*
 	Launch() function takes a name which can
 	be displayed as part of an error message,
 	and its function parameter now has the signature
@@ -52,7 +52,7 @@ func main() {
 	In the event the error (which is predeclared interface)
 	contains a value then we know an error condition's occurred
 	and can send a SIGABRT signal with syscall.Kill().
-**/
+*/
 func Launch(name string, f func() error) {
 	servers.Add(1)
 	go func() {
@@ -65,7 +65,7 @@ func Launch(name string, f func() error) {
 	}()
 }
 
-/**
+/*
 	SignalHandler() is using a standard for loop statement
 	to poll for input from the signal channel and then compare
 	it to the cases of a switch statement.
@@ -81,7 +81,7 @@ func Launch(name string, f func() error) {
 	when there's an error launching one of the servers,
 	in this case by setting ADDRESS and SECURE_ADDRESS to
 	the same value.
-**/
+*/
 func SignalHandler(c chan os.Signal) {
 	signal.Notify(c, os.Interrupt, syscall.SIGABRT, syscall.SIGTERM, syscall.SIGQUIT)
 	for s := <-c; ; s = <-c {

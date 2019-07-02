@@ -2,18 +2,18 @@ package main
 
 import "fmt"
 
-/**
+/*
 	interface{} is a collection of method signatures
 	that an Object can implement.
 
 	Like struct, we need to use type alias to simplify
 	interface declaration along with keyword interface.
-**/
+*/
 type Stringer interface {
-	/**
+	/*
 		Stringer interface which has 1 method, String()
 		which accepts no arguments and return string.
-	**/
+	*/
 	String() string
 }
 
@@ -33,11 +33,11 @@ func (w *World) String() string {
 	return "world"
 }
 
-/**
+/*
 	struct are typed collections of fields.
 	Message struct having X and Y fields and
 	has a type of string.
-**/
+*/
 type Message struct {
 	X Stringer
 	Y Stringer

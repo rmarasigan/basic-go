@@ -8,15 +8,15 @@ func main() {
 	Println(Hello, world())
 }
 
-/**
+/*
 	The empty brackets () indicate that there are
 	no parameters passed into the function when it's called.
-**/
+*/
 func world() string {
-	/**
+	/*
 		return is required by the language specification
 		whenever a function specifies return values.
-	**/
+	*/
 	return "world"
 }
 

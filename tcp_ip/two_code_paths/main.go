@@ -19,11 +19,11 @@ func main() {
 	servers.Wait()
 }
 
-/**
+/*
 	TLSListener() returns a net.Listener value as
 	tls.Listener complies with its interface, or a nil
 	value if tls.Listen() returns an error.
-**/
+*/
 func TLSListener(cert, key, address string) (r net.Listener) {
 	if certificate, e := tls.LoadX509KeyPair(cert, key); e == nil {
 		config := tls.Config{
@@ -38,10 +38,10 @@ func TLSListener(cert, key, address string) (r net.Listener) {
 	return
 }
 
-/**
+/*
 	Serve() - to phrase the server behaviour in terms
 	of the net.Listener interface.
-**/
+*/
 func Serve(listener net.Listener) {
 	if listener != nil {
 		Launch(func() {
@@ -57,10 +57,10 @@ func Serve(listener net.Listener) {
 	}
 }
 
-/**
+/*
 	Launch() - to manage the lifecycle of our two server
 	goroutines.
-**/
+*/
 func Launch(f func()) {
 	servers.Add(1)
 	go func() {

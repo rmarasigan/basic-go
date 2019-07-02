@@ -16,20 +16,20 @@ func main() {
 		Fprintf(w, message)
 	})
 
-	/**
+	/*
 		Channels are typed conduit through which you can send
 		and receive values with the channel operator <-.
 
 		Example:
 			ch <- v    (Send v to channel ch)
 			v := <-ch  (Receive from ch, and assign value to v)
-	**/
+	*/
 	done := make(chan bool)
 
-	/**
+	/*
 		Goroutines run in the same address space, so access to
 		shared memory must be synchronized.
-	**/
+	*/
 	go func() {
 		go func() {
 			ListenAndServe(ADDRESS, nil)

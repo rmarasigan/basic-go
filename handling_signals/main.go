@@ -5,13 +5,13 @@ import (
 	. "net/http"
 	"os"
 
-	/**
+	/*
 		os/signal package:
 		Allows us to register a channel (an atomic queue for
 		transferring messages between goroutines at runtime) on
 		which notifications are to be received using the
 		signal.Notify() function.
-	**/
+	*/
 	"os/signal"
 	. "sync"
 )
@@ -52,7 +52,7 @@ func Launch(f func()) {
 	}()
 }
 
-/**
+/*
 	SignalHandler() consists of a goroutine
 	containing an infinite loop and blocking on
 	a channel of fixed size (in this case able to
@@ -65,21 +65,21 @@ func Launch(f func()) {
 	signal (which can be sent from another shell session
 	using the kill command) will never be received by our
 	Go code.
-**/
+*/
 func SignalHandler(c chan os.Signal) {
 	signal.Notify(c, os.Interrupt)
 
 	for s := <-c; ; s = <-c {
 		switch s {
-		/**
+		/*
 			os.Interrupt can be sent with
 			control-C.
-		**/
+		*/
 		case os.Interrupt:
 			Println("^C received")
 			os.Exit(0)
 
-			/**
+			/*
 				os.Kill equates to SIGKILL on
 				*nixen and is usually a non-maskable
 				interrupt, meaning that it terminates
@@ -89,7 +89,7 @@ func SignalHandler(c chan os.Signal) {
 				Kill signal (which can be sent from another
 				shell session using the kill command) will
 				never be received by our Go code.
-			**/
+			*/
 		case os.Kill:
 			Println("SIGKILL received")
 			os.Exit(1)

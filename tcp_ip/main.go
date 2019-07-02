@@ -1,6 +1,6 @@
 package main
 
-/**
+/*
 	How to run our program:
 		$ go run main.go &
 		[1] 29137
@@ -14,11 +14,11 @@ package main
 		Escape character is '^]'.
 		Hello World
 		Connection closed by foreign host.
-**/
+*/
 
 import (
 	. "fmt"
-	/**
+	/*
 		net package revolves around server the Listener
 		and client Connection types.
 
@@ -33,7 +33,7 @@ import (
 		* For each net.Conn, run a handler in a separate goroutine.
 		* Read from and write to the connection while performing work.
 		* Close each connection when it finishes its work.
-	**/
+	*/
 	"net"
 )
 
@@ -41,13 +41,13 @@ func main() {
 	if listener, e := net.Listen("tcp", ":1024"); e == nil {
 		for {
 			if connection, e := listener.Accept(); e == nil {
-				/**
+				/*
 					net.Conn implements the Writer interface defined in the io
 					package.
 
 					fmt.Fprintf takes any type which integrates io.Writer as its
 					target.
-				**/
+				*/
 				go func(c net.Conn) {
 					defer c.Close()
 					Fprintln(c, "Hello World")

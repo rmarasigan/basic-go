@@ -1,6 +1,6 @@
 package main
 
-/**
+/*
 	UDP is an unreliable transport dealing in
 	individual packets (datagrams) which are
 	independent of each other, therefore a server
@@ -8,7 +8,7 @@ package main
 	and these are responsible for any error-correction
 	or packet ordering which may be necessary to
 	coordinate successive signals.
-**/
+*/
 
 import (
 	. "fmt"
@@ -18,7 +18,7 @@ import (
 var HELLO_WORLD = ([]byte)("Hello World\n")
 
 func main() {
-	/**
+	/*
 		net.ResolveUDPAddr() - to resolve the address.
 		net.ListenUDP() - opens a UDP port and listens
 		for traffic.
@@ -26,7 +26,7 @@ func main() {
 		buffer and provides the remote client's address.
 		net.WriteToUDP() - writes data back to the remote
 		client's address.
-	**/
+	*/
 	if address, e := net.ResolveUDPAddr("udp", ":1024"); e == nil {
 		if server, e := net.ListenUDP("udp", address); e == nil {
 			for buffer := MakeBuffer(); ; buffer = MakeBuffer() {
